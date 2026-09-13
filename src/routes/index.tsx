@@ -16,13 +16,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import heroAsset from "@/assets/hero_Wifey_laundry.png.asset.json";
-import bedAsset from "@/assets/Wifey_BedMaking2.png.asset.json";
-import cleaningAsset from "@/assets/Wifey_cleaning.png.asset.json";
-import dishesAsset from "@/assets/Wifey_Dishes2.png.asset.json";
-import organisingAsset from "@/assets/Wifey_Home_Organization2.png.asset.json";
-import ironingAsset from "@/assets/Wifey_Ironining2.png.asset.json";
-import logoAsset from "@/assets/Hire_A_Wifey_Logo_client_one_png-01-removebg-preview.png.asset.json";
+import heroImage from "@/assets/img/hero_Wifey_laundry.png";
+import bedImage from "@/assets/img/Wifey_BedMaking2.png";
+import cleaningImage from "@/assets/img/Wifey_cleaning.png";
+import dishesImage from "@/assets/img/Wifey_Dishes2.png";
+import organisingImage from "@/assets/img/Wifey_Home_Organization2.png";
+import ironingImage from "@/assets/img/Wifey_Ironining2.png";
+import logoOriginal from "@/assets/img/Hire_A_Wifey_Logo_transparent.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,12 +39,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { title: "Cleaning", caption: "A fresh, beautifully cared-for home.", image: cleaningAsset.url },
-  { title: "Laundry", caption: "Washed, folded and off your list.", image: heroAsset.url },
-  { title: "Ironing", caption: "Crisp clothes without the chore.", image: ironingAsset.url },
-  { title: "Bed-making", caption: "Hotel-fresh comfort at home.", image: bedAsset.url },
-  { title: "Organising", caption: "Calm, practical spaces that work.", image: organisingAsset.url },
-  { title: "Meal Prep", caption: "A helping hand around the kitchen.", image: dishesAsset.url },
+  { title: "Cleaning", caption: "A fresh, beautifully cared-for home.", image: cleaningImage },
+  { title: "Laundry", caption: "Washed, folded and off your list.", image: heroImage },
+  { title: "Ironing", caption: "Crisp clothes without the chore.", image: ironingImage },
+  { title: "Bed-making", caption: "Hotel-fresh comfort at home.", image: bedImage },
+  { title: "Organising", caption: "Calm, practical spaces that work.", image: organisingImage },
+  { title: "Meal Prep", caption: "A helping hand around the kitchen.", image: dishesImage },
 ];
 
 const faqs = [
@@ -65,8 +65,10 @@ function HomePage() {
     <main className="overflow-x-hidden pb-16 md:pb-0">
       <header className="absolute inset-x-0 top-0 z-30 border-b border-primary-foreground/20">
         <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-          <a href="#top" aria-label="Hire a Wifey home" className="min-w-0">
-            <img src={logoAsset.url} alt="Hire a Wifey" className="h-14 w-auto max-w-[9rem] object-contain brightness-0 invert" />
+          <a href="#top" aria-label="Hire a Wifey home" className="min-w-0 flex items-center">
+            <div className="rounded-lg bg-white px-3 py-1.5 shadow-sm transition-transform hover:scale-105">
+              <img src={logoOriginal} alt="Hire a Wifey" className="h-10 w-auto object-contain" />
+            </div>
           </a>
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-semibold text-primary-foreground md:flex">
             <a href="#top" className="transition-colors hover:text-blush">Home</a>
@@ -82,8 +84,8 @@ function HomePage() {
       </header>
 
       <section id="top" className="relative flex min-h-[680px] items-end overflow-hidden bg-charcoal md:min-h-[740px] md:items-center">
-        <img src={heroAsset.url} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-30 blur-sm" />
-        <img src={heroAsset.url} alt="Hire a Wifey team member folding laundry in a Hervey Bay home" className="absolute inset-0 h-full w-full object-contain object-top md:object-right" />
+        <img src={heroImage} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-30 blur-sm" />
+        <img src={heroImage} alt="Hire a Wifey team member folding laundry in a Hervey Bay home" className="absolute inset-0 h-full w-full object-contain object-top md:object-right" />
         <div className="hero-overlay absolute inset-0" />
         <div className="section-shell relative z-10 pb-16 pt-32 md:pb-0">
           <div className="max-w-2xl text-primary-foreground">
@@ -238,7 +240,9 @@ function HomePage() {
       <footer className="bg-charcoal pb-10 pt-14 text-primary-foreground">
         <div className="section-shell grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.9fr_1fr]">
           <div className="max-w-sm">
-            <img src={logoAsset.url} alt="Hire a Wifey" className="h-16 w-auto max-w-[10rem] object-contain brightness-0 invert" />
+            <div className="inline-block rounded-lg bg-white px-3.5 py-2 shadow-sm">
+              <img src={logoOriginal} alt="Hire a Wifey" className="h-12 w-auto object-contain" />
+            </div>
             <p className="mt-4 text-sm leading-6 text-primary-foreground/70">Friendly, reliable home help for households across Hervey Bay and nearby surrounds.</p>
             <p className="mt-4 flex items-center gap-2 text-sm font-semibold"><MapPin className="h-4 w-4 shrink-0 text-blush" /> Hervey Bay, Queensland</p>
           </div>

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoOriginal from "@/assets/img/Hire_A_Wifey_Logo_transparent.png";
 
 export const Route = createFileRoute("/book")({
   head: () => ({ meta: [
@@ -17,8 +18,10 @@ export const Route = createFileRoute("/book")({
 function BookPage() {
   return <main className="grid min-h-screen place-items-center bg-blush-soft px-5 py-16">
     <section className="w-full max-w-xl rounded-lg border border-border bg-card p-8 text-center shadow-lg sm:p-12">
-      <CalendarCheck className="mx-auto h-12 w-12 text-primary" />
-      <h1 className="mt-5 text-3xl font-extrabold text-charcoal">Book a Wifey</h1>
+      <Link to="/" className="inline-block mb-4 transition-opacity hover:opacity-85">
+        <img src={logoOriginal} alt="Hire a Wifey" className="mx-auto h-16 w-auto object-contain" />
+      </Link>
+      <h1 className="mt-2 text-3xl font-extrabold text-charcoal">Book a Wifey</h1>
       <p className="mt-4 leading-7 text-muted-foreground">Tell us what help you need through the enquiry form and our Hervey Bay team will be in touch.</p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <Button asChild variant="hero" className="h-12 rounded-full px-7"><Link to="/" hash="contact">Start an enquiry</Link></Button>
