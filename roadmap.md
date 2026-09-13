@@ -1,4 +1,4 @@
 # Roadmap
-- [ ] Build branded responsive homepage with supplied imagery
-- [ ] Add booking and careers destinations
-- [ ] Verify desktop and mobile layouts
+- [x] Build branded responsive homepage with supplied imagery
+- [x] Add booking and careers destinations
+- [x] Verify desktop and mobile layouts
