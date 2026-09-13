@@ -69,6 +69,7 @@ function HomePage() {
             <img src={logoAsset.url} alt="Hire a Wifey" className="h-14 w-auto max-w-[9rem] object-contain brightness-0 invert" />
           </a>
           <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-semibold text-primary-foreground md:flex">
+            <a href="#top" className="transition-colors hover:text-blush">Home</a>
             <a href="#services" className="transition-colors hover:text-blush">Services</a>
             <a href="#support" className="transition-colors hover:text-blush">NDIS & Veterans</a>
             <a href="#reviews" className="transition-colors hover:text-blush">Reviews</a>
@@ -80,8 +81,9 @@ function HomePage() {
         </div>
       </header>
 
-      <section id="top" className="relative flex min-h-[680px] items-end overflow-hidden md:min-h-[740px] md:items-center">
-        <img src={heroAsset.url} alt="Hire a Wifey team member folding laundry in a Hervey Bay home" className="absolute inset-0 h-full w-full object-cover object-[58%_32%] md:object-[center_32%]" />
+      <section id="top" className="relative flex min-h-[680px] items-end overflow-hidden bg-charcoal md:min-h-[740px] md:items-center">
+        <img src={heroAsset.url} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-105 object-cover opacity-30 blur-sm" />
+        <img src={heroAsset.url} alt="Hire a Wifey team member folding laundry in a Hervey Bay home" className="absolute inset-0 h-full w-full object-contain object-top md:object-right" />
         <div className="hero-overlay absolute inset-0" />
         <div className="section-shell relative z-10 pb-16 pt-32 md:pb-0">
           <div className="max-w-2xl text-primary-foreground">
@@ -116,8 +118,8 @@ function HomePage() {
           <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
             {services.map((service) => (
               <article key={service.title} className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-                <div className="aspect-[4/5] overflow-hidden sm:aspect-[4/3]">
-                  <img src={service.image} alt={`Hire a Wifey ${service.title.toLowerCase()} service`} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                <div className="aspect-[2/3] overflow-hidden bg-muted">
+                  <img src={service.image} alt={`Hire a Wifey ${service.title.toLowerCase()} service`} loading="lazy" className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
                 </div>
                 <div className="p-4 sm:p-5">
                   <h3 className="text-base font-bold text-charcoal sm:text-lg">{service.title}</h3>
@@ -233,17 +235,42 @@ function HomePage() {
         </div>
       </section>
 
-      <footer className="bg-charcoal py-10 text-primary-foreground">
-        <div className="section-shell flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+      <footer className="bg-charcoal pb-10 pt-14 text-primary-foreground">
+        <div className="section-shell grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.9fr_1fr]">
+          <div className="max-w-sm">
             <img src={logoAsset.url} alt="Hire a Wifey" className="h-16 w-auto max-w-[10rem] object-contain brightness-0 invert" />
-            <p className="mt-3 text-sm text-primary-foreground/65">We take care of home. Hervey Bay, Queensland.</p>
+            <p className="mt-4 text-sm leading-6 text-primary-foreground/70">Friendly, reliable home help for households across Hervey Bay and nearby surrounds.</p>
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold"><MapPin className="h-4 w-4 shrink-0 text-blush" /> Hervey Bay, Queensland</p>
           </div>
-          <div className="flex gap-5 text-sm font-semibold">
-            <a href="#services" className="hover:text-blush">Services</a>
-            <a href="#contact" className="hover:text-blush">Contact</a>
-            <Link to="/careers" className="hover:text-blush">Careers</Link>
+          <div>
+            <h2 className="text-sm font-bold uppercase text-blush">Explore</h2>
+            <nav aria-label="Footer navigation" className="mt-4 grid gap-3 text-sm text-primary-foreground/75">
+              <a href="#top" className="hover:text-blush">Home</a>
+              <a href="#services" className="hover:text-blush">Services</a>
+              <a href="#reviews" className="hover:text-blush">Reviews</a>
+              <a href="#contact" className="hover:text-blush">Contact</a>
+            </nav>
           </div>
+          <div>
+            <h2 className="text-sm font-bold uppercase text-blush">Our support</h2>
+            <div className="mt-4 grid gap-3 text-sm text-primary-foreground/75">
+              <a href="#support" className="hover:text-blush">NDIS support</a>
+              <a href="#support" className="hover:text-blush">DVA clients</a>
+              <span>Weekly & fortnightly help</span>
+              <span>One-off visits</span>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-bold uppercase text-blush">Get started</h2>
+            <div className="mt-4 grid gap-3 text-sm text-primary-foreground/75">
+              <Link to="/book" className="font-bold text-primary-foreground hover:text-blush">Book a Wifey</Link>
+              <Link to="/careers" className="hover:text-blush">Become a Wifey</Link>
+              <a href="#contact" className="hover:text-blush">Ask a question</a>
+            </div>
+          </div>
+        </div>
+        <div className="section-shell mt-10 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/55">
+          <p>© 2026 Hire a Wifey. We take care of home.</p>
         </div>
       </footer>
 
