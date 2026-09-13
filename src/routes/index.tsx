@@ -270,7 +270,7 @@ function HomePage() {
           </div>
         </div>
         <div className="section-shell mt-10 border-t border-primary-foreground/15 pt-6 text-xs text-primary-foreground/55">
-          <p>© 2026 Hire a Wifey. We take care of home.</p>
+          <p>© 2026 Hire a Wifey. We take care of home.  All rights reserved. Developed by Zannatul.</p>
         </div>
       </footer>
 
